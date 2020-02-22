@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<head>
+    <title>Stepper Form</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <button id="form-start">Create new account!</button>
+  <form hidden>
+    <div class='form-container'>
+    <p>Step 1</p>
+    <hr>
+    <div id='username-container' class="input-container">
+      <h3>Choose a username</h3>
+      <p><input type="text" id='username-input' placeholder="username"></p>
+      <a class='step step-next' href="#" data-target='#password-container'>Continue</a>
+    </div>
+    <br>
+    <p>Step 2</p>
+    <hr>
+    <div id='password-container' class="input-container" hidden>
+      <h3>Choose a password</h3>
+      <p><input type="password" id='password-input' placeholder="password"></p>
+      <a class='step step-next' href="#" data-target='#color-container'>Continue</a>
+      <a class='step' href="#" data-target='#username-container'>Back</a>
+    </div>
+    <br>
+    <p>Step 3</p>
+    <hr>
+    <div id='color-container' class="input-container" hidden>
+      <h3>Choose a favorite color</h3>
+      <p><input type="text" id='color-input' placeholder="purple, green, etc."></p>
+      <a class='step step-next verify-step' href="#" data-target='#verify-container'>Continue</a>
+      <a class='step' href="#" data-target='#password-container'>Back</a>
+    </div>
+    <br>
+    <p> Step 4</p>
+    <hr>
+    <div id='verify-container' class="input-container" hidden>
+      <h3>Please confirm your information</h3>
+      <p>Username: <span id="username-verify" class="verify-data" data-source="#username-input"></span></p>
+      <p>Password: <span id="password-verify" class="verify-data" data-source="#password-input"></span></p>
+      <p>Favorite color: <span id="color-verify" class="verify-data" data-source="#color-input"></span></p>
+      <button class='form-submit'>Submit</button>
+      <a class='step' href="#" data-target='#color-container'>Back</a>
+    </div>
+    </div>
+  </form>
+  <script src="app.js"></script>
+</body>
